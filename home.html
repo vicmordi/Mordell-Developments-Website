@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mordell Development Limited</title>
+  <meta name="description" content="Mordell Development Limited — Professional Construction, Property Development, and Project Management across Nigeria." />
+  <link rel="preload" href="assets/slide1.png" as="image">
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Small overrides to enlarge brand logo/text without touching your styles.css -->
+  <style>
+    .brand { gap: 12px; }
+    .brand img { height: 64px; width: auto; }
+    @media (min-width: 768px) { .brand img { height: 72px; } }
+    .brand-text { font-size: 1.2rem; font-weight: 800; letter-spacing: .2px; }
+    .site-footer .socials { margin-top: 12px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .site-footer .socials a { text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+    .site-footer .socials .icon { width: 20px; height: 20px; }
+  </style>
+</head>
+<body>
+ 
+  <!-- Header -->
+  <header class="site-header" role="banner" data-header>
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#/home" aria-label="Mordell Development Home">
+        <img src="assets/mordelllogo.png" alt="Mordell Development logo" />
+        <span class="brand-text">MORDELL DEVELOPMENTS LIMITED</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#/home" data-nav-link>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3l9-8z"/></svg>
+          <span>Home</span>
+        </a></li>
+        <li><a href="#/about" data-nav-link>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-5 0-9 2.5-9 5.5V22h18v-2.5C21 16.5 17 14 12 14z"/></svg>
+          <span>About</span>
+        </a></li>
+        <li><a href="#/contact" data-nav-link>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8V7l-3 2-3-2-3 2-3-2-3 2V8l3 2 3-2 3 2 3-2 3 2zM3 19h18V9l-3 2-3-2-3 2-3-2-3 2-3-2z"/></svg>
+          <span>Contact</span>
+        </a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- App root -->
+  <main id="app" class="app" tabindex="-1" aria-live="polite"></main>
+
+  <!-- ===================== Templates ===================== -->
+
+  <!-- HOME -->
+  <template id="tpl-home">
+    <!-- HERO SLIDER (8 slides with Nigeria-relevant captions) -->
+    <section class="hero">
+      <div class="hero-carousel" role="region" aria-roledescription="carousel" aria-label="Featured projects">
+        <div class="hero-track" data-hero-track>
+
+          <!-- Slide 1: Completed house with gate -->
+          <div class="hero-slide is-active" style="--bg:url('assets/slide1.png')">
+            <div class="hero-overlay">
+              <h1>Completed Homes, Secure Perimeters</h1>
+              <p>From structure to finishing and gate works, we deliver turnkey homes that are secure, durable, and ready to live in.</p>
+              <a class="cta" href="#/about">See How We Deliver</a>
+            </div>
+          </div>
+
+          <!-- Slide 2: Uncompleted house with workers mixing -->
+          <div class="hero-slide" style="--bg:url('assets/slide2.png')">
+            <div class="hero-overlay">
+              <h1>Supervised Craftsmanship on Site</h1>
+              <p>Proper mixing ratios, clean water, and competent supervision—so blocks, mortar, and concrete meet spec.</p>
+              <a class="cta" href="#/contact">Request Site Visit</a>
+            </div>
+          </div>
+
+          <!-- Slide 3: Modern kitchen -->
+          <div class="hero-slide" style="--bg:url('assets/slide3.png')">
+            <div class="hero-overlay">
+              <h1>Modern Kitchens Built to Last</h1>
+              <p>Moisture-resistant cabinetry, solid worktops, proper ventilation and safe electrical layouts for daily use.</p>
+              <a class="cta" href="#/about">Interior Finishing</a>
+            </div>
+          </div>
+
+          <!-- Slide 4: Completed modern bungalow -->
+          <div class="hero-slide" style="--bg:url('assets/slide4.png')">
+            <div class="hero-overlay">
+              <h1>Smart Bungalows, Efficient Layouts</h1>
+              <p>Single-storey designs optimized for airflow, daylighting, and cost-effective maintenance in Nigeria’s climate.</p>
+              <a class="cta" href="#/contact">Start Your Build</a>
+            </div>
+          </div>
+
+          <!-- Slide 5: Modern living parlor -->
+          <div class="hero-slide" style="--bg:url('assets/slide5.png')">
+            <div class="hero-overlay">
+              <h1>Comfortable Living Spaces</h1>
+              <p>POP ceilings, quality lighting, and durable finishes that stay fresh under daily family use.</p>
+              <a class="cta" href="#/about">Our Finishes</a>
+            </div>
+          </div>
+
+          <!-- Slide 6: Completed duplex -->
+          <div class="hero-slide" style="--bg:url('assets/slide6.png')">
+            <div class="hero-overlay">
+              <h1>Duplex Projects with Strong Structure</h1>
+              <p>Sound engineering, accurate rebar schedules, and clean detailing across two levels and stair cores.</p>
+              <a class="cta" href="#/contact">Discuss a Duplex</a>
+            </div>
+          </div>
+
+          <!-- Slide 7: Uncompleted bungalow -->
+          <div class="hero-slide" style="--bg:url('assets/slide7.png')">
+            <div class="hero-overlay">
+              <h1>Quality from Ground to Roof</h1>
+              <p>We get it right at substructure—DPC height, damp control, and drainage—before finishes ever start.</p>
+              <a class="cta" href="#/about">Our Method</a>
+            </div>
+          </div>
+
+          <!-- Slide 8: Modern house plan -->
+          <div class="hero-slide" style="--bg:url('assets/slide8.png')">
+            <div class="hero-overlay">
+              <h1>Plans that Respect Your Budget</h1>
+              <p>Optimized layouts, accurate BOQ, and phased delivery so you can build with confidence.</p>
+              <a class="cta" href="#/contact">Get a BOQ</a>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="hero-control prev" aria-label="Previous slide" data-hero-prev><span aria-hidden="true">‹</span></button>
+        <button class="hero-control next" aria-label="Next slide" data-hero-next><span aria-hidden="true">›</span></button>
+        <div class="hero-dots" role="tablist" aria-label="Slide dots" data-hero-dots></div>
+      </div>
+    </section>
+
+    <!-- Nigeria-focused Construction Content (uses your main1–main8 images) -->
+    <section class="container section">
+      <header class="section-head">
+        <h2>Nigeria Construction: Practical Guidance & What We Actually Do on Site</h2>
+        <p class="lead">Real site issues—sandcrete quality, waterlogged plots, DPC/rising damp, approvals, solar/back-up power, roof detailing, seasonal planning, and safe operations.</p>
+      </header>
+
+      <div class="grid cards">
+        <!-- 1 Sandcrete Blocks -->
+        <article class="card">
+          <img src="assets/main1.png" alt="Sandcrete block QA and laying checks" loading="lazy">
+          <div class="card-body">
+            <h3>Sandcrete Blocks: Strength, Sourcing & QA</h3>
+            <p>We verify supplier mix quality and curing, then test on site for density and compressive strength.</p>
+            <ul class="bullets">
+              <li><strong>Supplier vetting:</strong> cement brand consistency, sharp sand, proper curing bays.</li>
+              <li><strong>On-site checks:</strong> random crush tests, drop test, dimensional accuracy.</li>
+              <li><strong>Laying:</strong> true plumb/level, bonded corners, no aligned vertical joints.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 2 Foundations -->
+        <article class="card">
+          <img src="assets/main2.png" alt="Foundations and drainage in waterlogged soil" loading="lazy">
+          <div class="card-body">
+            <h3>Foundations for Waterlogged & Coastal Soils</h3>
+            <p>Geotech checks, suitable foundation type (wider strip, raft, or piles), and perimeter drainage.</p>
+            <ul class="bullets">
+              <li><strong>Investigations:</strong> trial pits, bearing checks, groundwater level.</li>
+              <li><strong>Drainage:</strong> sumps, falls away from walls, clean backfill.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 3 DPC / Damp -->
+        <article class="card">
+          <img src="assets/main3.png" alt="DPC detail to prevent rising damp" loading="lazy">
+          <div class="card-body">
+            <h3>Rising Damp Control: DPC Done Right</h3>
+            <p>Continuous DPC typically ≥150 mm above finished ground, with no gaps at thresholds.</p>
+            <ul class="bullets">
+              <li><strong>Continuity:</strong> overlap at joints, wrap columns, protect edges.</li>
+              <li><strong>Plinth:</strong> hardscape band or gravel to stop splashback.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 4 Roofs -->
+        <article class="card">
+          <img src="assets/main4.png" alt="Roof underlay and fixing details" loading="lazy">
+          <div class="card-body">
+            <h3>Roofs for Tropical Storms</h3>
+            <p>Underlay membranes, proper pitch, stainless/galvanized fixings, and correctly sized gutters.</p>
+            <ul class="bullets">
+              <li><strong>Laps & capping:</strong> wind-resistant detailing at eaves and ridges.</li>
+              <li><strong>Drainage:</strong> debris guards and downpipe runs to ground drains.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 5 Power -->
+        <article class="card">
+          <img src="assets/main5.png" alt="Generator, inverter and solar integration" loading="lazy">
+          <div class="card-body">
+            <h3>Power Planning: NEPA, Generator & Solar</h3>
+            <p>Split critical loads, design safe changeover, and integrate inverter/solar with proper earthing.</p>
+            <ul class="bullets">
+              <li><strong>Load audit:</strong> map critical circuits and future expansion.</li>
+              <li><strong>Safety:</strong> earthing & lightning protection, ventilation in gen house.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 6 Water & Sanitation -->
+        <article class="card">
+          <img src="assets/main6.png" alt="Borehole and septic system setbacks" loading="lazy">
+          <div class="card-body">
+            <h3>Borehole & Septic: Practical Setbacks</h3>
+            <p>We separate borehole and soakaway and consider flow direction to reduce contamination risk.</p>
+            <ul class="bullets">
+              <li><strong>Treatment:</strong> filtration + UV or chlorination for domestic use.</li>
+              <li><strong>Access:</strong> serviceable covers, vents, and maintenance access.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 7 Approvals -->
+        <article class="card">
+          <img src="assets/main7.png" alt="Permits and stamped drawings" loading="lazy">
+          <div class="card-body">
+            <h3>Approvals, Drawings & Supervision</h3>
+            <p>Coordinated architectural/structural/MEP drawings, permit support, and competent supervision.</p>
+            <ul class="bullets">
+              <li><strong>QA/QC:</strong> submittals, site inspections, and closeout documentation.</li>
+              <li><strong>Reporting:</strong> progress photos and weekly updates.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 8 Programme / Seasons -->
+        <article class="card">
+          <img src="assets/main8.png" alt="Seasonal planning and look-ahead boards" loading="lazy">
+          <div class="card-body">
+            <h3>Programme That Respects Seasons</h3>
+            <p>Plan substructure before peak rains; cure concrete properly in heat; protect materials on site.</p>
+            <ul class="bullets">
+              <li><strong>Look-ahead:</strong> rolling 3–6 week plan with constraints log.</li>
+              <li><strong>Storage:</strong> cover and raise timber; keep cement dry.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+  </template>
+
+  <!-- ABOUT (expanded and detailed) -->
+  <template id="tpl-about">
+    <section class="container section page">
+      <header class="page-head">
+        <h1>About Mordell Development Limited</h1>
+        <p class="lead">We’re a Nigerian construction partner delivering durable residential and commercial projects with transparent processes, strong supervision, and safety at the core.</p>
+      </header>
+
+      <div class="two-col">
+        <div>
+          <h3>Who We Are</h3>
+          <p>Mordell Development Limited plans, builds, and delivers projects across Lagos, Abuja, Port Harcourt and other regions. We align drawings, materials, and site execution to suit Nigerian conditions—rainy seasons, waterlogged soils, power variability, and local approvals.</p>
+
+          <h3>What We Do</h3>
+          <ul class="checklist">
+            <li>General Contracting & Construction Management</li>
+            <li>Residential: Bungalows, Duplexes, Estate Housing</li>
+            <li>Commercial: Fit-outs, Renovations, Small Works</li>
+            <li>Preconstruction: Estimating, Value Engineering, Scheduling</li>
+            <li>Property Maintenance & Post-handover Support</li>
+          </ul>
+
+          <h3>How We Work</h3>
+          <ol class="checklist">
+            <li><strong>Brief & Budget:</strong> clarify scope, priorities, and cost targets.</li>
+            <li><strong>Design Coordination:</strong> architectural, structural, and MEP alignment; permit support.</li>
+            <li><strong>Programme:</strong> season-aware schedule with milestones and look-ahead planning.</li>
+            <li><strong>Procurement:</strong> vetted suppliers, approved submittals, and logistics planning.</li>
+            <li><strong>Execution:</strong> supervised works, HSE enforcement, QA/QC checklists.</li>
+            <li><strong>Handover:</strong> snagging, as-builts, manuals, and maintenance guidance.</li>
+          </ol>
+        </div>
+
+        <div class="panel">
+          <h3>Our Standards</h3>
+          <p><strong>Quality:</strong> On-site material testing (sandcrete density/crush, moisture checks), workmanship inspections, and documented approvals.</p>
+          <p><strong>Safety (HSE):</strong> Daily toolbox talks, PPE compliance, safe scaffolds/edges, hot-work permits, and tidy laydown areas.</p>
+          <p><strong>Transparency:</strong> Weekly progress updates with photos, cost tracking, and risk logs so clients aren’t surprised.</p>
+
+          <h3>Deliverables You Receive</h3>
+          <ul class="checklist">
+            <li>Bill of Quantities (BOQ) or itemized estimate</li>
+            <li>Programme with milestones & look-ahead plans</li>
+            <li>Submittal register & QA/QC checklists</li>
+            <li>HSE plan and site rules</li>
+            <li>Handover pack: as-built notes, warranties, maintenance tips</li>
+          </ul>
+
+          <h3>Who We Serve</h3>
+          <p>Private homeowners, real estate developers, SMEs, and organizations needing reliable project delivery in Nigeria.</p>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <!-- CONTACT (wired to Formspree + thank-you redirect) -->
+  <template id="tpl-contact">
+    <section class="container section page">
+      <header class="page-head">
+        <h1>Contact Us</h1>
+        <p class="lead">Tell us about your project—scope, location, preferred start date—and we’ll provide next steps.</p>
+      </header>
+
+      <!-- Formspree endpoint -->
+      <form id="contactForm" class="contact-form" method="POST" action="https://formspree.io/f/xqagwlek">
+        <!-- subject for your inbox -->
+        <input type="hidden" name="subject" value="New inquiry from Mordell Development website" />
+        <!-- THANK-YOU REDIRECT: replace with your real URL when ready -->
+        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html" />
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+            <span class="error" aria-live="polite"></span>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+            <span class="error" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+            <span class="error" aria-live="polite"></span>
+          </div>
+          <div class="form-field">
+            <label for="budget">Estimated Budget</label>
+            <input id="budget" name="budget" type="text" placeholder="₦5M – ₦200M+" />
+            <span class="error" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Project Details</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </template>
+
+  <footer class="site-footer">
+    <div class="container">© 2025 Mordell Development Limited
+      <div class="socials" aria-label="Social links">
+        <a href="https://www.instagram.com/mordelldevelopments?igsh=MWh1ODFqd3NibHRmZA==" target="_blank" rel="noopener" aria-label="Instagram">
+          <!-- Instagram icon -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm6.5-.75a1.25 1.25 0 1 0 1.25 1.25 1.25 1.25 0 0 0-1.25-1.25zM12 9a3 3 0 1 1-3 3 3 3 0 0 1 3-3z"/></svg>
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.tiktok.com/@mordelldevelopmen?_r=1&_t=ZS-913u1J5Njr5" target="_blank" rel="noopener" aria-label="TikTok">
+          <!-- TikTok icon -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 2a6 6 0 0 0 6 6V11a9 9 0 1 1-9-9h3zM10 10a3 3 0 1 0 3 3v-5a6 6 0 0 0 3 1v2a5 5 0 1 1-6 5z"/></svg>
+          <span>TikTok</span>
+        </a>
+        <a href="mailto:mordelldevelopments@outlook.com" aria-label="Email">
+          <!-- Email icon -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v.2l-10 6.25L2 6.2V6zm0 2.8V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8.8l-10 6.25L2 8.8z"/></svg>
+          <span>Email</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
